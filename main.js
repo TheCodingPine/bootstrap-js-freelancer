@@ -44,11 +44,13 @@ richiestaPreventivo.addEventListener("click", elaboraPreventivo);
 
 //funzione richiamata dal tasto Submit------
 function elaboraPreventivo() {
-    //funzione che trova il value del Lavoro richiesto in Type of work
-    estraiValueLavoro();
+    //funzione che trova il value del Lavoro richiesto in Type of work: estraiValueLavoro();
     //estrarre le ore preventivate
+    calcolaTariffa(estraiValueLavoro); // calcola la tariffa in base al valore di TYpe of Work
+    //contare ore per tariffa oraria
     estraiOreLavoro();
     //fare il calcolo della tariffa
+
 }
 //-----------------------------------------
 
@@ -56,20 +58,28 @@ function elaboraPreventivo() {
 function estraiValueLavoro() {
     let valueDelLavoro = document.getElementById("tipoDiLavoro").value;
     console.log(valueDelLavoro);
+    return valueDelLavoro;
 }
 
 function estraiOreLavoro() {
     let tempoPreventivato = document.getElementById("tempoPreventivato").value;
     tempoPreventivato = parseInt(tempoPreventivato);
     console.log(tempoPreventivato);
+    return tempoPreventivato;
 }
 
-
-
-function tariffaOrariaScelta() {
-     
+function calcolaTariffa (workValue) {
+    let tariffaOraria = 0;
+    if (workValue == 1) {
+        tariffaOraria = 20.5;
+    }else if (workValue == 2) {
+        tariffaOraria = 15.3;
+    }else{
+        tariffaOraria = 33.6;
+    }
+    console.log(tariffaOraria);
+    return tariffaOraria;
 }
-
 
 
 
