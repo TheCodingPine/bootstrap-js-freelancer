@@ -31,7 +31,8 @@ function elaboraPreventivo() {
     let spesaDelCliente = eseguiPreventivo(oreLavoro, moltiplicatore);
     console.log(spesaDelCliente);
 
-    let codiceScontoInserito = document.getElementById("codiceSconto");
+    let codiceScontoInserito = document.getElementById("codiceSconto").value;
+    console.log(codiceScontoInserito);
     convalidaCodici(codiceScontoInserito);
 
 if (isCodiceCorretto == true) {
