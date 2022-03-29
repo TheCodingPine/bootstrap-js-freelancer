@@ -46,19 +46,25 @@ richiestaPreventivo.addEventListener("click", elaboraPreventivo);
 function elaboraPreventivo() {
     //funzione che trova il value del Lavoro richiesto in Type of work: estraiValueLavoro();
     //estrarre le ore preventivate
-    calcolaTariffa(estraiValueLavoro); // calcola la tariffa in base al valore di TYpe of Work
+    let tariffatore = estraiValueLavoro();
+    let moltiplicatore = calcolaTariffa(tariffatore); // calcola la tariffa in base al valore di TYpe of Work
     //contare ore per tariffa oraria
-    estraiOreLavoro();
+    let oreLavoro = estraiOreLavoro();
     //fare il calcolo della tariffa
-
+    let spesaDelCliente = eseguiPreventivo(oreLavoro, moltiplicatore);
+    console.log(spesaDelCliente);
 }
 //-----------------------------------------
 
 
 function estraiValueLavoro() {
-    let valueDelLavoro = document.getElementById("tipoDiLavoro").value;
+    let valueDelLavoro = parseInt(document.getElementById("tipoDiLavoro").value);
     console.log(valueDelLavoro);
+    console.log(typeof "valueDelLavoro");
+    valueDelLavoro = parseInt(valueDelLavoro);
+    console.log(typeof "valueDelLavoro");
     return valueDelLavoro;
+
 }
 
 function estraiOreLavoro() {
@@ -69,10 +75,11 @@ function estraiOreLavoro() {
 }
 
 function calcolaTariffa (workValue) {
-    let tariffaOraria = 0;
-    if (workValue == 1) {
+    let tariffaOraria = 3;
+    let input = parseInt(workValue);
+    if (input == "1") {
         tariffaOraria = 20.5;
-    }else if (workValue == 2) {
+    }else if (input == "2") {
         tariffaOraria = 15.3;
     }else{
         tariffaOraria = 33.6;
@@ -81,8 +88,10 @@ function calcolaTariffa (workValue) {
     return tariffaOraria;
 }
 
-
-
+function eseguiPreventivo(tempo, tariffa) {
+    let preventivo = tempo * tariffa;
+    return preventivo;
+}
 
 
 
