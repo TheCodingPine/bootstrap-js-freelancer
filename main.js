@@ -42,13 +42,27 @@ let isCodiceCorretto = false;
 const richiestaPreventivo = document.getElementById("preventivatore");
 richiestaPreventivo.addEventListener("click", elaboraPreventivo);
 
-//funzioen richiamata dal tasto Submit------
+//funzione richiamata dal tasto Submit------
 function elaboraPreventivo() {
-    console.log("Funziona il tasto");
+    //funzione che trova il value del Lavoro richiesto in Type of work
+    estraiValueLavoro();
+    //estrarre le ore preventivate
+    estraiOreLavoro();
+    //fare il calcolo della tariffa
+}
+//-----------------------------------------
+
+
+function estraiValueLavoro() {
     let valueDelLavoro = document.getElementById("tipoDiLavoro").value;
     console.log(valueDelLavoro);
-}//-----------------------------------------
+}
 
+function estraiOreLavoro() {
+    let tempoPreventivato = document.getElementById("tempoPreventivato").value;
+    tempoPreventivato = parseInt(tempoPreventivato);
+    console.log(tempoPreventivato);
+}
 
 
 
@@ -60,6 +74,5 @@ function tariffaOrariaScelta() {
 
 
 
-let tempoPreventivato = Number(document.getElementById("tempoPreventivato"));
-console.log(tempoPreventivato);
+
 
