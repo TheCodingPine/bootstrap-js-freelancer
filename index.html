@@ -130,8 +130,8 @@
                 <!--riga tre-->
                 <div class="col-sm-12 col-md-6">
                     <label>Type of work</label>
-                    <select class="form-select">
-                        <option selected>Type of work </option>
+                    <select class="form-select" id="tipoDiLavoro" onchange="updateLavoro">
+                        <option selected>Type of work</option>
                         <option value="1">Backend Development</option>
                         <option value="2">Frontend Development</option>
                         <option value="3">Fullstack Development</option>
@@ -149,7 +149,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-warning mt-3 btn-sm w-auto">Send</button></p>
+                    <button type="submit" class="btn btn-warning mt-3 btn-sm w-auto" id="preventivatore">Send</button></p>
                 </div>
     <p class="text-black fw-bold">Il prezzo finale è di: <span id="preventivo"></span>&euro;</p>
             </div>
@@ -167,27 +167,6 @@
         </div>
     </footer>
     </container>
-
-
-            
-
-
-
-
-
-
-
-
-       <!-- <div class="card col-8 text-center mt-5 mx-auto shadow">
-            text
-            
-        </div>-->
-
-
-
-
-
-    
      <!-- main javascript-->
      <script type="text/javascript" src="main.js"></script>
      <!--enabler per jquery, js etc-->
