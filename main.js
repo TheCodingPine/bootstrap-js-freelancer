@@ -1,6 +1,4 @@
-/*- Se la commissione riguarda lo sviluppo backend il prezzo orario è di 20.5€ l’ora
-- Se la commissione riguarda lo sviluppo frontend il prezzo orario è di 15.3€ l’ora
-- Se la commissione riguarda l’analisi progettuale di un progetto il prezzo orario è di 33.6€
+/*
 Se poi l’utente inserisce un codice promozionale tra i seguenti
 YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24,
 fate in modo che l’utente abbia diritto ad uno sconto del 25% sul prezzo finale.
@@ -10,27 +8,6 @@ del prezzo finale in una “forma umana” in un apposito tag HTML appena sotto 
 
 ------------------------------------------------------------------
 
-to do: collegare send al print
-
-to do: contare i soldi
-
-let tariffa
-
-if work is 1 then tariffa = 20.5
-else if work is 2 then tariffa = 15.3
-else if work is 3 then tariffa = 33.6
-else alert ("Inserisci un tipo di lavoro")
-
-let array dei codici
-let codice = true
-
-for loop in cerca del codice
-
-
-if 
-
-
-opzione 1: hours x
 
 */
 
@@ -53,9 +30,34 @@ function elaboraPreventivo() {
     //fare il calcolo della tariffa
     let spesaDelCliente = eseguiPreventivo(oreLavoro, moltiplicatore);
     console.log(spesaDelCliente);
+
+    let codiceScontoInserito = document.getElementById("codiceSconto");
+    convalidaCodici(codiceScontoInserito);
+
+if (isCodiceCorretto == true) {
+    spesaDelCliente = (spesaDelCliente * 0.75);
+}else{
+    alert("Il codice inserito non è valido");
+}
+
     document.getElementById("output").innerHTML = spesaDelCliente;
 }
 //-----------------------------------------
+
+
+
+
+
+function convalidaCodici(scontoInserito) {
+
+    for (let i=0; i < listaCodiciSconto.length; i++) {
+        if (listaCodiciSconto[i] == scontoInserito) {
+            isCodiceCorretto=true;
+            break; //uscita anticipata dal loop
+        }
+    }
+}
+
 
 
 function estraiValueLavoro() {
@@ -93,6 +95,3 @@ function eseguiPreventivo(tempo, tariffa) {
     let preventivo = tempo * tariffa;
     return preventivo;
 }
-
-
-
