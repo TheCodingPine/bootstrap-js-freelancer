@@ -102,76 +102,74 @@
     </container>
 <!--footer con i prompt dati-->
     <container>
-        <footer class="bg-info row mt-3 mx-0 px-0 container-fluid pb-4">
+    <footer>
+        <div class="bg-info row mt-3 mx-0 px-0 container-fluid pb-4">
             <span class="h4 mb-3 text-uppercase mt-3 text-center">wanT aN Offer?</span>
             
-
+<!--i form-->
+        
             <div class="row m-auto">
                 <!--riga uno-->
                 <div class="col-sm-12 col-md-6">
                     <label>First Name</label>
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                    <input type="text" class="form-control" placeholder="Giorgio" id="nome">
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <label>Surname</label>
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                    <label for="cognome">Surname</label>
+                    <input type="text" class="form-control" placeholder="Galli" id="cognome">
                 </div>
                 <!--riga due-->
                 <div class="col-sm-12 col-md-6">
                     <label>Email address</label>
-                    <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                    <input type="email" class="form-control" placeholder="giorgiogalli@gmail.com" id="postaElettronica">
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <label>Hour request</label>
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                    <input type="number" class="form-control" placeholder="10" id="tempoPreventivato">
                 </div>
                 <!--riga tre-->
                 <div class="col-sm-12 col-md-6">
                     <label>Type of work</label>
                     <select class="form-select">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option selected>Type of work </option>
+                        <option value="1">Backend Development</option>
+                        <option value="2">Frontend Development</option>
+                        <option value="3">Fullstack Development</option>
                     </select>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <label>Hour request</label>
-                    <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                    <label>Discount Code</label>
+                    <input type="text" class="form-control" placeholder="Insert discount code" id="codiceSconto">
                 </div>
                 <!--last line-->
-                <div class="col"></div>
-                    <label>Hour request</label>
+                <div class="col">
+                    <label>Message</label>
                     <div class="input-group">
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                      </div>
+                        <textarea class="form-control" placeholder="Insert an optional message" id="messaggioAllegato"></textarea>
+                    </div>
                 </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-warning mt-3 btn-sm w-auto">Send</button></p>
+                </div>
+    <p class="text-black fw-bold">Il prezzo finale è di: <span id="preventivo"></span>&euro;</p>
             </div>
-            
 
 
+        </div>
 
+        <div class="bg-dark row mt-0 mx-0 px-0 container-fluid pb-4 text-secondary">
+            <span class="h5 mb-3 text-uppercase mt-5 text-center">Location</span>
+            <span class="mb-2 mt-3 text-center fw-light">2215 John Daniel Drive
+                <br>
+                Clark, MO 65234
+            </span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </footer>
+        </div>
+    </footer>
     </container>
 
 
-
+            
 
 
 
