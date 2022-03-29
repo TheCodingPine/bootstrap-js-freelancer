@@ -37,15 +37,18 @@ opzione 1: hours x
 let listaCodiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 let isCodiceCorretto = false;
 
+
+
 const richiestaPreventivo = document.getElementById("preventivatore");
 richiestaPreventivo.addEventListener("click", elaboraPreventivo);
 
-//ora ho bisogno della funzione che elabora il preventivo
+//funzioen richiamata dal tasto Submit------
+function elaboraPreventivo() {
+    console.log("Funziona il tasto");
+    let valueDelLavoro = document.getElementById("tipoDiLavoro").value;
+    console.log(valueDelLavoro);
+}//-----------------------------------------
 
-//funzione che cambia il valore del tipo di lavoro onChange
-function updateLavoro() {
-    let tipoDiLavoro = document.getElementById("tipoDiLavoro");
-}
 
 
 
@@ -54,9 +57,6 @@ function tariffaOrariaScelta() {
 }
 
 
-function elaboraPreventivo() {
-    console.log("Funziona il tasto")
-}
 
 
 
