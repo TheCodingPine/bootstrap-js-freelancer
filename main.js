@@ -1,19 +1,5 @@
-/*
-Se poi l’utente inserisce un codice promozionale tra i seguenti
-YHDNU32, JANJC63, PWKCN25, SJDPO96, POCIE24,
-fate in modo che l’utente abbia diritto ad uno sconto del 25% sul prezzo finale.
-Se il codice inserito non è valido, informate l’utente che il codice è sbagliato e
-calcolate il prezzo finale senza applicare sconti. Mostrare il risultato del calcolo
-del prezzo finale in una “forma umana” in un apposito tag HTML appena sotto il bottone send.
-
-------------------------------------------------------------------
-
-
-*/
-
 let listaCodiciSconto = ["YHDNU32", "JANJC63", "PWKCN25", "SJDPO96", "POCIE24"];
 let isCodiceCorretto = false;
-
 
 
 const richiestaPreventivo = document.getElementById("preventivatore");
@@ -35,22 +21,17 @@ function elaboraPreventivo() {
     console.log(codiceScontoInserito);
     convalidaCodici(codiceScontoInserito);
 
-if (isCodiceCorretto == true) {
-    spesaDelCliente = (spesaDelCliente * 0.75);
-}else{
-    alert("Il codice inserito non è valido");
-}
+    if (isCodiceCorretto == true) {
+        spesaDelCliente = (spesaDelCliente * 0.75);
+    }else{
+        alert("Il codice inserito non è valido");
+    }
 
-    document.getElementById("output").innerHTML = spesaDelCliente;
+    document.getElementById("output").innerHTML = spesaDelCliente.toFixed(2);
 }
 //-----------------------------------------
 
-
-
-
-
 function convalidaCodici(scontoInserito) {
-
     for (let i=0; i < listaCodiciSconto.length; i++) {
         if (listaCodiciSconto[i] == scontoInserito) {
             isCodiceCorretto=true;
@@ -58,7 +39,6 @@ function convalidaCodici(scontoInserito) {
         }
     }
 }
-
 
 
 function estraiValueLavoro() {
@@ -71,12 +51,14 @@ function estraiValueLavoro() {
 
 }
 
+
 function estraiOreLavoro() {
     let tempoPreventivato = document.getElementById("tempoPreventivato").value;
     tempoPreventivato = parseInt(tempoPreventivato);
     console.log(tempoPreventivato);
     return tempoPreventivato;
 }
+
 
 function calcolaTariffa (workValue) {
     let tariffaOraria = 3;
@@ -91,6 +73,7 @@ function calcolaTariffa (workValue) {
     console.log(tariffaOraria);
     return tariffaOraria;
 }
+
 
 function eseguiPreventivo(tempo, tariffa) {
     let preventivo = tempo * tariffa;
