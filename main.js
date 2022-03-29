@@ -53,6 +53,7 @@ function elaboraPreventivo() {
     //fare il calcolo della tariffa
     let spesaDelCliente = eseguiPreventivo(oreLavoro, moltiplicatore);
     console.log(spesaDelCliente);
+    document.getElementById("output").innerHTML = spesaDelCliente;
 }
 //-----------------------------------------
 
